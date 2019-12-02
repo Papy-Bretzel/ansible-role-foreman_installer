@@ -10,7 +10,7 @@
 - include_tasks: installer.yml
 
 - include_tasks: upgrade.yml
-  when: foreman_installer_upgrade == True
+  when: foreman_installer_upgrade
 
 - include_tasks: ha-extras.yml
   tags:

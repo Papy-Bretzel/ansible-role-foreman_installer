@@ -32,12 +32,12 @@
 
 - name: execute foreman-installer
   command: >
-      foreman-installer {{ (foreman_installer_verbose == True) | ternary("-v", "") }}
+      foreman-installer {{ foreman_installer_verbose | ternary("-v", "") }}
       --scenario "{{ foreman_installer_scenario }}"
-      {{ (dont_save_answers == True) | ternary("--dont-save-answers", "") }}
-      {{ (foreman_installer_update_certs == True and foreman_installer_update_certs_tar == False) | ternary("--certs-update-server --certs-update-server-ca", "") }}
-      {{ (foreman_installer_update_certs == True and foreman_installer_update_certs_tar == True) | ternary("--certs-update-server", "") }}
-      {{ (foreman_installer_upgrade == True and (foreman_installer_scenario == "katello" or foreman_installer_scenario == "satellite")) | ternary("--upgrade", "") }}
+      {{ dont_save_answers | ternary("--dont-save-answers", "") }}
+      {{ (foreman_installer_update_certs and not foreman_installer_update_certs_tar) | ternary("--certs-update-server --certs-update-server-ca", "") }}
+      {{ (foreman_installer_update_certs and foreman_installer_update_certs_tar | ternary("--certs-update-server", "") }}
+      {{ (foreman_installer_upgrade and (foreman_installer_scenario == "katello" or foreman_installer_scenario == "satellite")) | ternary("--upgrade", "") }}
       {{ foreman_installer_options | join(" ") }}
 
 - name: reload ansible_local

@@ -98,7 +98,7 @@
     {{ ('--server-key ' + foreman_installer_katello_certs_dir + '/' + ansible_nodename + '-proxy-cert.key') if foreman_installer_katello_proxy_key is defined else '' }}
     {{ ('--server-ca-cert ' + foreman_installer_katello_certs_dir + '/katello-ca-cert.pem') if foreman_installer_katello_ca is defined else '' }}
     {{ (foreman_installer_update_certs_tar) | ternary('--certs-update-server', '') }}
-  when: (ca_cert.changed | default(False)) or (custom_cert.changed | default(False)) or (key_cert.changed | default(False)) or (csr_cert.changed | default(False)) or proxy_cert_tar.stat.exists == False
+  when: (ca_cert.changed | default(False)) or (custom_cert.changed | default(False)) or (key_cert.changed | default(False)) or (csr_cert.changed | default(False)) or not proxy_cert_tar.stat.exists
   delegate_to: "{{ hostvars[foreman_installer_generate_proxy_certs_from].inventory_hostname }}"
   tags:
     - skip_ansible_lint
