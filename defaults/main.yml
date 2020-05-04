@@ -1,7 +1,7 @@
 ---
 el_gpg:
   - https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
-  - https://yum.theforeman.org/releases/1.24/RPM-GPG-KEY-foreman
+  - https://yum.theforeman.org/releases/2.0/RPM-GPG-KEY-foreman
   - http://yum.puppetlabs.com/RPM-GPG-KEY-puppet
 el_repos:
   - name: epel
@@ -9,22 +9,10 @@ el_repos:
     baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
   - name: foreman
     description: foreman
-    baseurl: https://yum.theforeman.org/releases/1.24/el7/$basearch
-  - name: foreman-rails
-    description: foreman-rails
-    baseurl: https://yum.theforeman.org/rails/foreman-1.24/el7/$basearch
+    baseurl: https://yum.theforeman.org/releases/2.0/el7/$basearch
   - name: foreman-plugins
     description: foreman-plugins
-    baseurl: https://yum.theforeman.org/plugins/1.24/el7/$basearch
-  - name: katello
-    description: katello
-    baseurl: https://fedorapeople.org/groups/katello/releases/yum/3.13/katello/el7/$basearch
-  - name: pulp
-    description: pulp
-    baseurl: https://repos.fedorapeople.org/repos/pulp/pulp/stable/2.20/$releasever/$basearch
-  - name: candlepin
-    description: candlepin
-    baseurl: https://fedorapeople.org/groups/katello/releases/yum/3.13/candlepin/el7/$basearch
+    baseurl: https://yum.theforeman.org/plugins/2.0/el7/$basearch
   - name: puppet6
     description: puppet6
     baseurl: https://yum.puppetlabs.com/puppet6/el/7/$basearch
