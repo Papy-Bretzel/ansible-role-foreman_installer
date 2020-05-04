@@ -13,6 +13,7 @@ el_repos:
   - name: foreman-plugins
     description: foreman-plugins
     baseurl: https://yum.theforeman.org/plugins/2.0/el7/$basearch
+    gpgcheck: no
   - name: puppet6
     description: puppet6
     baseurl: https://yum.puppetlabs.com/puppet6/el/7/$basearch
