@@ -17,6 +17,8 @@ el_repos:
     description: puppet6
     baseurl: https://yum.puppetlabs.com/puppet6/el/7/$basearch
 
+foreman_installer_dependencies:
+  - foreman-release-scl
 foreman_installer_pkg: foreman-installer
 foreman_installer_pkg_state: present
 foreman_installer_verbose: False
