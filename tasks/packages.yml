@@ -15,7 +15,7 @@
   with_items: "{{ el_repos }}"
   when:
   - ansible_distribution in ["CentOS", "Red Hat Enterprise Linux"] and ansible_distribution_major_version == "7"
- - name: "Add Katello repositories"
+- name: "Add Katello repositories"
   yum:
     name: "https://fedorapeople.org/groups/katello/releases/yum/{{ foreman_installer_katello_version }}/katello/el7/x86_64/katello-repos-latest.rpm"
     state: present
