@@ -18,6 +18,7 @@ el_repos:
     baseurl: "https://yum.theforeman.org/plugins/{{ foreman_installer_version }}/el7/$basearch"
     gpgcheck: no
   - name: katello
+    description: katello
     baseurl: https://fedorapeople.org/groups/katello/releases/yum/{{ foreman_installer_katello_version }}/katello/el7/x86_64/katello-repos-latest.rpm
   - name: puppet6
     description: puppet6
