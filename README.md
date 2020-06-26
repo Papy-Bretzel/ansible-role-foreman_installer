@@ -12,6 +12,7 @@ N/A
 ```yaml
 vars:
   foreman_installer:
+    foreman_installer_version:                    # Version of Foreman to install. Default is "latest". Only major and minor, ex: "2.0"
     foreman_installer_pkg:                        # foreman installer package. You probably want either "foreman-installer" or "katello".
     foreman_installer_verbose:                    # Run the installe with -v option
     foreman_installer_scenario:                   # Scenario. Required
