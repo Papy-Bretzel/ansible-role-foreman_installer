@@ -10,4 +10,4 @@
 {% set answers = ansible_local.foreman_installer[foreman_installer_scenario~'_answers'] | combine(foreman_installer_scenarios_answers, recursive=True) %}
 {# {{ foreman_installer_scenarios_answers | to_nice_yaml(indent=2) | indent(width=2, indentfirst=True) }} #}
 {# Workaround https://github.com/ansible/ansible/issues/24425 #}
-{{ foreman_installer_scenarios_answers | string | from_yaml | to_nice_yaml(indent=2) | indent(width=2, indentfirst=True) }}
+{{ answers | string | from_yaml | to_nice_yaml(indent=2) | indent(width=2, indentfirst=True) }}
