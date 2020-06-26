@@ -19,7 +19,7 @@ vars:
     foreman_installer_scenarios_answers:          # Dict of custom answers that for your scenario. See [FAQs](https://github.com/sean797/ansible-role-foreman_installer#faqs). 
     foreman_installer_options: []                 # Array of extra options to pass to whenever the installer is ran
     foreman_installer_generate_proxy_certs_from:  # String containing the ansible host to Generate Certificates for a Katello Smart Proxy
-    foreman_installer_katello_version             # Version of the Katello plugin that should be installed. Default is "latest"
+    foreman_installer_katello_version:             # Version of the Katello plugin that should be installed. Default is "latest"
     foreman_installer_katello_ca:                 # String containing the custom CA cert. Katello & Katello Smart Proxy Only.
     foreman_installer_katello_cert:               # String containing the custom cert. Katello Only.
     foreman_installer_katello_key:                # String containing the custom key. Katello Only.
